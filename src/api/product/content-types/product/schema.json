@@ -1,0 +1,162 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "isTrailer": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "video": {
+      "type": "string",
+      "required": true
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "minithumb": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "poster": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "release": {
+      "type": "integer",
+      "required": true
+    },
+    "interface_lang": {
+      "type": "enumeration",
+      "enum": [
+        "rus",
+        "eng",
+        "rus-eng",
+        "rus-eng-multi"
+      ],
+      "required": true
+    },
+    "dubbing_lang": {
+      "type": "enumeration",
+      "enum": [
+        "rus",
+        "eng",
+        "rus-eng",
+        "rus-eng-multi"
+      ],
+      "required": true
+    },
+    "crack": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "download": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "low_os": {
+      "type": "string",
+      "required": true
+    },
+    "low_cpu": {
+      "type": "string",
+      "required": true
+    },
+    "low_ram": {
+      "type": "string",
+      "required": true
+    },
+    "low_gpu": {
+      "type": "string",
+      "required": true
+    },
+    "low_sound": {
+      "type": "string",
+      "required": true
+    },
+    "low_space": {
+      "type": "string",
+      "required": true
+    },
+    "best_os": {
+      "type": "string",
+      "required": true
+    },
+    "best_cpu": {
+      "type": "string",
+      "required": true
+    },
+    "best_ram": {
+      "type": "string",
+      "required": true
+    },
+    "best_gpu": {
+      "type": "string",
+      "required": true
+    },
+    "best_sound": {
+      "type": "string",
+      "required": true
+    },
+    "best_space": {
+      "type": "string",
+      "required": true
+    },
+    "creators": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::creator.creator",
+      "inversedBy": "products"
+    },
+    "genres": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::genre.genre",
+      "inversedBy": "products"
+    }
+  }
+}
